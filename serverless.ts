@@ -11,18 +11,10 @@ export const service: Serverless = {
         runtime: 'nodejs14.x',
         region: 'ap-northeast-1',
         deploymentBucket: {
-            name: 'learn-serverless',
+            name: 'learn-serverless-preparation',
         },
         timeout: 30,
-        memorySize: 1024,
-        iam: {
-            role: {
-                name: 'learn-serverless',
-                managedPolicies: [
-                'arn:aws:iam::${opt:account}:policy/learn_serverless',
-                ],
-            },
-        },
+        memorySize: 1024
     },
     functions: {
     },

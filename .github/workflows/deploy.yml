@@ -1,9 +1,9 @@
+name: Serverless Deploy
+
 on:
   push:
     branches:
       - main
-
-name: Serverless Deploy
 
 jobs:
   deploy:
@@ -22,7 +22,7 @@ jobs:
           yarn install
 
       - name: Deploy to aws
-        run: yarn serverless deploy  --account ${{secrets.AWS_USER_NAME}}
+        run: yarn serverless deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
